@@ -14,7 +14,9 @@ composer install
 ```
 Webpack
 ```php
-php bin/doctrine orm:schema-tool:update --force
+npm i
+
+npm run build
 ```
 Есть поддержка сонсольных команд [Doctrine ORM](https://www.doctrine-project.org/projects/doctrine-orm/en/3.5/reference/tools.html)
 ```php
