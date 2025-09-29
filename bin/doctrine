@@ -1,0 +1,12 @@
+<?php
+
+require implode(DIRECTORY_SEPARATOR, [dirname(__DIR__), 'vendor', 'autoload.php']);
+
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
+use App\Components\ORM\Doctrine;
+
+
+$entityManager = (new Doctrine(dirname(__DIR__) . DIRECTORY_SEPARATOR))->init();
+
+ConsoleRunner::run(new SingleManagerProvider($entityManager));

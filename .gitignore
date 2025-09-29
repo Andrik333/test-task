@@ -1,0 +1,6 @@
+/.osp
+/.vscode
+/node_modules
+/var
+/vendor
+/public/build

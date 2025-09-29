@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+{% block content %}
+    <div class="container d-flex flex-wrap justify-content-center">
+        <div class="block-login">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-login-tab" data-bs-toggle="tab" data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-login" aria-selected="true">Вход</button>
+                    <button class="nav-link" id="nav-reagistration-tab" data-bs-toggle="tab" data-bs-target="#nav-reagistration" type="button" role="tab" aria-controls="nav-reagistration" aria-selected="false">Регистрация</button>
+                </div>
+            </nav>
+            <div class="tab-content py-5" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab" tabindex="0">
+                    <form class="ajaxForm" action="/api/login" method="post">
+                        <div class="mb-3">
+                            <label for="loginLogin" class="form-label">Логин</label>
+                            <input required name="login" type="login" class="form-control" id="loginLogin">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input required name="password" type="password" class="form-control" id="loginPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-4">Вход</button>
+                        <a class="mt-4 d-flex justify-content-end" href="/show-password">Забыли пароль?</a>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="nav-reagistration" role="tabpanel" aria-labelledby="nav-reagistration-tab" tabindex="0">
+                    <form class="ajaxForm" action="/api/registration" method="post">
+                        <div class="mb-3">
+                            <label for="registrationLogin" class="form-label">Логин</label>
+                            <input required name="login" type="login" class="form-control" id="registrationLogin">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registrationPassword" class="form-label">Пароль</label>
+                            <input required name="password" type="password" class="form-control" id="registrationPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-4">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

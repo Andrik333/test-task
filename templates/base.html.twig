@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+    <head>
+        {% block head %}
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="/build/script.js" defer></script>
+            <title>{% block title %}Главная{% endblock %}</title>
+        {% endblock %}
+    </head>
+    <body>
+        <main>
+            <div id="header" class="container">
+                <header class="d-flex flex-wrap align-items-center justify-content-between py-3">
+                    <div class="col-md-3 mb-md-0">
+                        <span>Блог</span>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center justify-content-end">
+                        {% if is_auth() %}
+                            <span class="px-3 user-login"><i class="bi bi-alarm"></i>{{get_user_login()}}</span>
+                            <a href="/logout" class="btn btn-primary">Logout</a>
+                        {% else %}
+                            <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+                        {% endif %}
+                    </div>
+                </header>
+            </div>
+            <div id="content" class="py-5">
+                {% block content %}{% endblock %}
+            </div>
+            <div id="modal" class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modalTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="modalText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ок</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="container mt-auto">
+                <footer class="py-3 my-3">
+                    <p class="text-center">© 2025 Copyright</p>
+                </footer>
+            </div>
+        </main>
+    </body>
+</html>

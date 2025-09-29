@@ -1,0 +1,17 @@
+{
+    "autoload": {
+        "psr-0": {"": "src/"},
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.2",
+        "twig/twig": "^3.0",
+        "symfony/http-foundation": "^7.3",
+        "doctrine/orm": "^3.5",
+        "doctrine/dbal": "^4.3",
+        "symfony/cache": "^7.3",
+        "symfony/dotenv": "^7.3"
+    }
+}

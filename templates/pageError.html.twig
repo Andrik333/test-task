@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{message}}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="block-error">
+            <span class="code">{{code}}</span>
+            <p class="message">{{message}}</p>
+        </div>
+    </div>
+{% endblock %}
