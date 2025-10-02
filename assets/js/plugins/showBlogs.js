@@ -17,7 +17,7 @@
 
         function getBlogs(params, $content, $pagination) {
             $.ajax({
-                url: '/api/blogss',
+                url: '/api/blogs',
                 type: 'POST',
                 data: params,
                 dataType: 'json',
