@@ -19,9 +19,7 @@ class BlogApiController extends BaseApiController
             return new JsonResponse(['message' => 'Доступно только авторизованным пользователям'], JsonResponse::HTTP_UNAUTHORIZED);
         }
 
-        $currentPage = htmlspecialchars(
-            intval($this->request->request->get('page', 1))
-        );
+        $currentPage = intval($this->request->request->get('page', 1));
 
         try {
             $posts = $this->entityManager->getRepository(Post::class)->getPosts();
@@ -29,7 +27,7 @@ class BlogApiController extends BaseApiController
             $responseData = [
                 'message' => 'Ok',
                 'data' => [
-                    'total' => $_ENV['POSTS_COUNT'],
+                    'total' => intval($_ENV['POSTS_COUNT']),
                     'pages' => ceil($_ENV['POSTS_COUNT'] / 12),
                     'currentPage' => $currentPage,
                     'posts' => $posts
